@@ -71,10 +71,10 @@ const loggedInUser = (_, args, ctx) => {
 module.exports = {
   Query: {
     user,
+    loginUser,
     loggedInUser
   },
   Mutation: {
-    createUser,
-    loginUser
+    createUser
   }
 }
