@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 const user = () => {
   return {
     _id: 'ulle',
-    name: 'Carli',
     email: 'car@use.se',
     password: '12345' 
   }
@@ -20,7 +19,6 @@ const createUser = async (_, args, ctx) => {
   const hash = await bcrypt.hash(args.input.password, 12)
 
   const user = await ctx.models.user.create({
-    // name: args.input.name,
     email: args.input.email,
     password: hash
   })

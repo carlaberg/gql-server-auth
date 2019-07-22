@@ -22,6 +22,8 @@ const server = new GraphQLServer(gqlServerConfig)
 server.express.use((req, res, next) => {
   const authHeader = req.get('Authorization')
 
+  console.log(authHeader)
+
   if (authHeader) {
     const token = authHeader.split(' ')[1]
     const { userId } = jwt.verify(token, process.env.JWT_SECRET)
