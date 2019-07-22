@@ -1,13 +1,15 @@
 const user = require('./user')
+const post = require('./post')
 const merge = require('lodash/merge')
+
+console.log(post.resolvers)
 
 module.exports = {
   typeDefs: [
-    user.typeDefs
+    user.typeDefs,
+    post.typeDefs
   ].join(' '),
-  resolvers: merge({}, user.resolvers),
-  // The express request object and the mongoose database models
-  // are passed down to the context object which is accessible in the resolvers
+  resolvers: merge({}, user.resolvers, post.resolvers),
   context: req => ({ ...req,
     models: {
       user: user.model
