@@ -9,7 +9,7 @@
   "author": "Carl Åberg",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.0",
+    "bcrypt": "^5.0.0",
     "dotenv": "^8.0.0",
     "graphql-yoga": "^1.18.0",
     "jsonwebtoken": "^8.5.1",
